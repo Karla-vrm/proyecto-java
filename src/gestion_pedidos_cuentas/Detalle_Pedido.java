@@ -1,8 +1,8 @@
 
-package gestión_pedidos._cuentas;
+package gestion_pedidos_cuentas;
 
 public class Detalle_Pedido {
-    private String producto; 
+    private Menu producto; 
     private int cantidad;
     private boolean servido;
     private double descuento;
@@ -16,7 +16,7 @@ public class Detalle_Pedido {
         this.servido = false;
         this.descuento = descuento;
         this.iva = iva;
-        calcularTotal();
+ 
     }
 
     public void calcularTotal() {

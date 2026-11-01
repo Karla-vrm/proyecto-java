@@ -1,4 +1,4 @@
-package gestión_pedidos._cuentas;
+package gestion_pedidos_cuentas;
 
 
 import java.util.ArrayList;
@@ -17,12 +17,12 @@ public class Pedido {
         this.detalles = new ArrayList<>();
     }
 
-    public void agregarItem() {
-        this.detalles.add();
+    public void agregarItem(Detalle_Pedido Producto) {
+        this.detalles.add(Producto);
     }
 
-    public void quitarItem() {
-        this.detalles.remove();
+    public void quitarItem(Detalle_Pedido Producto) {
+        this.detalles.remove(Producto);
     }
 
     public String getEstado() {

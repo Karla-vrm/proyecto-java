@@ -1,5 +1,5 @@
 
-package gestión_pedidos._cuentas;
+package gestion_pedidos_cuentas;
 
 public class Pago {
     private String metodoPago;

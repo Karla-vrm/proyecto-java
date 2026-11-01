@@ -1,8 +1,7 @@
-package gestión_pedidos._cuentas;
-
+package gestion_pedidos_cuentas;
 import java.util.Scanner;
 
-public class GESTIÓN_PEDIDOS_CUENTAS {
+public class GESTION_PEDIDOS_CUENTAS {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

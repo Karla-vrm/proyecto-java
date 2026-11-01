@@ -1,4 +1,4 @@
-package gestión_pedidos._cuentas;
+package gestion_pedidos_cuentas;
 
 
 public class Postre extends Menu {
@@ -10,7 +10,7 @@ public class Postre extends Menu {
     }
 
     public double descuento() {
-       
+    
         return 0.0; 
     }
 
@@ -21,6 +21,6 @@ public class Postre extends Menu {
 
     @Override
     public void mostrarInformacion() {
-        System.out.println("Postre: " + nombre + " | Precio: $" + precio);
+        System.out.println("Postre: " + getNombre() + " | Precio: $" + precio);
     }
 }

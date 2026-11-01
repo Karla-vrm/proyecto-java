@@ -1,4 +1,4 @@
-package gestión_pedidos._cuentas;
+package gestion_pedidos_cuentas;
 
 public abstract class Menu {
     private String nombre;
@@ -16,11 +16,23 @@ public abstract class Menu {
     public double getPrecioBase() {
         return precioBase;
     }
+
+    public void setNombre(String nombre) {
+        if (nombre != null){
+            this.nombre = nombre;
+        }
+        
+    }
+
+    public void setPrecioBase(double precioBase) {
+          if (precioBase >0 ){
+            this.precioBase = precioBase;
+        }
+        
+    }
     
     
     
     public abstract void mostrarInformacion();
     
-    
- 
 }

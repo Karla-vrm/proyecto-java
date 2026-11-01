@@ -1,5 +1,4 @@
-package gestión_pedidos._cuentas;
-
+package gestion_pedidos_cuentas;
 
 public class Bebida extends Menu {
     private String tamano;
@@ -18,29 +17,20 @@ public class Bebida extends Menu {
         this.tamano = tamano;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setPrecioBase(double precioBase) {
-        this.precioBase = precioBase;
-    }
-
     public String getTamano() {
         return tamano;
     }
+    
+    
+    
 
-    public String getNombre() {
-        return nombre;
+    
     }
 
-    public double getPrecioBase() {
-        return precioBase;
-    }
 
     
     
     
-}
+
 
 
