@@ -1,36 +1,67 @@
 package gestion_pedidos_cuentas;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private String estado;
+    private String estadoPedido;
+    private int idPedido;
     private Mesa mesa;
     private Cliente cliente;
-    private List<Detalle_Pedido> detalles; 
+    private List<Detalle_Pedido> detalles;
+    private double IVA= 0.15;
 
-    public Pedido(String estado, Mesa mesa, Cliente cliente) {
-        this.estado = estado;
+    public Pedido(int idPedido, Mesa mesa, Cliente cliente) {
+        this.estadoPedido = "PENDIENTE";
+        this.idPedido= idPedido;
         this.mesa = mesa;
         this.cliente = cliente;
         this.detalles = new ArrayList<>();
+        
+        this.mesa.setOcupado(true);
     }
-
+    
+    
+    // Se añade un producto al Array
     public void agregarItem(Detalle_Pedido Producto) {
         this.detalles.add(Producto);
     }
-
+    
+    // Se elimina algun producto
     public void quitarItem(Detalle_Pedido Producto) {
         this.detalles.remove(Producto);
     }
+    
+    // Se calcula el subtotal usando el Array
+    
+    public double calcularSubtotal(){
+        double subtotal = 0;
+        for(Detalle_Pedido d: detalles){
+            subtotal += d.calcularSubtotalPorProducto();
+        }
+        return subtotal;
+    }
+    // Calculamoas total con impuestos
+    
+    public double calcularTotal(){
+        double subtotal = calcularSubtotal();
+        double impuesto = subtotal * IVA;
+        return subtotal + impuesto;
+    }
+    
+    // 
 
-    public String getEstado() {
-        return estado;
+    public int getIdPedido() {
+        return idPedido;
+    }
+    
+    
+
+    public String getEstadoPedido() {
+        return estadoPedido;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstadoPedido(String estado) {
+        this.estadoPedido = estado;
     }
 
     public Mesa getMesa() {
@@ -56,9 +87,5 @@ public class Pedido {
     public void setDetalles(List<Detalle_Pedido> detalles) {
         this.detalles = detalles;
     }
-
-
  
-    
-    
 }
