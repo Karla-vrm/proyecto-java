@@ -1,4 +1,5 @@
 package gestion_pedidos_cuentas;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,30 +9,25 @@ public class Pedido {
     private Mesa mesa;
     private Cliente cliente;
     private List<Detalle_Pedido> detalles;
-    private double IVA= 0.15;
+    private double IVA = 0.15;
+    private double porcentajeDescuento = 0.0; 
 
     public Pedido(int idPedido, Mesa mesa, Cliente cliente) {
         this.estadoPedido = "PENDIENTE";
-        this.idPedido= idPedido;
+        this.idPedido = idPedido;
         this.mesa = mesa;
         this.cliente = cliente;
         this.detalles = new ArrayList<>();
-        
         this.mesa.setOcupado(true);
     }
     
-    
-    // Se añade un producto al Array
     public void agregarItem(Detalle_Pedido Producto) {
         this.detalles.add(Producto);
     }
     
-    // Se elimina algun producto
     public void quitarItem(Detalle_Pedido Producto) {
         this.detalles.remove(Producto);
     }
-    
-    // Se calcula el subtotal usando el Array
     
     public double calcularSubtotal(){
         double subtotal = 0;
@@ -40,28 +36,39 @@ public class Pedido {
         }
         return subtotal;
     }
-    // Calculamoas total con impuestos
+    
     
     public double calcularTotal(){
         double subtotal = calcularSubtotal();
-        double impuesto = subtotal * IVA;
-        return subtotal + impuesto;
+        double descuento = subtotal * (porcentajeDescuento / 100.0);
+        double subtotalConDesc = subtotal - descuento;
+        double impuesto = subtotalConDesc * IVA;
+        return subtotalConDesc + impuesto;
     }
-    
-    // 
 
-    public int getIdPedido() {
-        return idPedido;
+    // NUEVO: Getters y Setters para el descuento
+    public double getPorcentajeDescuento() {
+        return porcentajeDescuento;
     }
-    
-    
+
+    public void setPorcentajeDescuento(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
+    }
 
     public String getEstadoPedido() {
         return estadoPedido;
     }
 
-    public void setEstadoPedido(String estado) {
-        this.estadoPedido = estado;
+    public void setEstadoPedido(String estadoPedido) {
+        this.estadoPedido = estadoPedido;
+    }
+
+    public int getIdPedido() {
+        return idPedido;
+    }
+
+    public void setIdPedido(int idPedido) {
+        this.idPedido = idPedido;
     }
 
     public Mesa getMesa() {
@@ -87,5 +94,14 @@ public class Pedido {
     public void setDetalles(List<Detalle_Pedido> detalles) {
         this.detalles = detalles;
     }
- 
+
+    public double getIVA() {
+        return IVA;
+    }
+
+    public void setIVA(double IVA) {
+        this.IVA = IVA;
+    }
+
+   
 }

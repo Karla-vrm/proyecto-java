@@ -23,5 +23,16 @@ public class Detalle_Pedido {
     public double calcularSubtotalPorProducto() {
         return producto.getPrecioBase() * cantidad;
     }
+
+    public Menu getProducto() {
+        return producto;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+    
+    
+    
     
 }
