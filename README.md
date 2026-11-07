@@ -2,4 +2,4 @@ Descripción del proyecto: Es un sistema de restaurante que permitirá mantener 
 
 Tecnologías usadas: Java, programación orientada a objetos, aplicación de consola, java.util.Scanner, java.util.Arraylist, Apache NetBeans IDE.
 
-Instrucciones de ejecución: Ejecutar con NetBeans IDE. 
+Instrucciones de ejecución: Ejecutar con NetBeans IDE.
