@@ -1,3 +1,5 @@
 Descripción del proyecto: Es un sistema de restaurante que permitirá mantener el orden entre los pedidos de los clientes, mediante su estado y detalles. Mientras que será una manera de que los clientes ordenen sus respectivos platos con su precio, a través del menú, incluirán platos, bebidas y postres, cada uno con sus descuentos si es necesario. Al finalizar el cliente tiene que pagar, se tiene que realizar la cuenta con todos los cálculos correspondientes. 
+
 Tecnologías usadas: Java, programación orientada a objetos, aplicación de consola, java.util.Scanner, java.util.Arraylist, Apache NetBeans IDE.
+
 Instrucciones de ejecución: Ejecutar con NetBeans IDE. 
